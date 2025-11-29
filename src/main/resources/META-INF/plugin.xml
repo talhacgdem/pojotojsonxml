@@ -1,0 +1,30 @@
+<idea-plugin>
+    <id>tr.talhacigdem.jetbrains.plugin.pojotojsonxml</id>
+    <name>POJO to JSON/XML</name>
+    <vendor email="talhacgdem@gmail.com">Muhammed Talha ÇİĞDEM</vendor>
+    <description><![CDATA[
+        Generates clean JSON and XML examples from your classes. Respects annotations (e.g., @JsonProperty), handles nested types and collections, and formats output neatly.
+        Ideal for API samples, tests, and documentation.
+    ]]>
+    </description>
+
+    <depends>com.intellij.modules.java</depends>
+
+    <actions>
+        <action id="PojoToJsonXml.Generate"
+                class="tr.talhacigdem.jetbrains.plugin.pojotojsonxml.actions.GenerateJsonXmlAction"
+                text="Generate JSON / XML from POJO"
+                description="Generate JSON or XML from this POJO">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <projectConfigurable
+                instance="tr.talhacigdem.jetbrains.plugin.pojotojsonxml.settings.PluginSettingsConfigurable"
+                displayName="POJO to JSON/XML"/>
+        <applicationService serviceImplementation="tr.talhacigdem.jetbrains.plugin.pojotojsonxml.settings.PluginSettingsState"/>
+    </extensions>
+
+</idea-plugin>
