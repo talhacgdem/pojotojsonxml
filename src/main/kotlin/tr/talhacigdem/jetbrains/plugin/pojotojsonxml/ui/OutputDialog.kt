@@ -63,8 +63,8 @@ class OutputDialog(
             insets = Insets(4, 4, 4, 8)
         }
 
-        useAnnotationsCheck = JCheckBox("Annotasyonları kullan", true)
-        includeNullsCheck = JCheckBox("Null alanları dahil et", false)
+        useAnnotationsCheck = JCheckBox("Use annotations", true)
+        includeNullsCheck = JCheckBox("Include null fields", false)
 
         indentSpinner = JSpinner(SpinnerNumberModel(2, 0, 8, 1))
 
@@ -72,11 +72,11 @@ class OutputDialog(
         gbc.gridx++
         panel.add(includeNullsCheck, gbc)
         gbc.gridx++
-        panel.add(JLabel("İndent:"), gbc)
+        panel.add(JLabel("Indent:"), gbc)
         gbc.gridx++
         panel.add(indentSpinner, gbc)
         gbc.gridx++
-        val regenerateBtn = JButton("Yeniden üret")
+        val regenerateBtn = JButton("Regenerate")
         regenerateBtn.addActionListener {
             regenerate()
         }
@@ -88,9 +88,9 @@ class OutputDialog(
     private fun buildActionsPanel(): JComponent
     {
         val panel = JPanel(FlowLayout(FlowLayout.RIGHT, 8, 4))
-        val copyJson = JButton("Kopyala JSON")
-        val copyXml = JButton("Kopyala XML")
-        val saveBtn = JButton("Kaydet…")
+        val copyJson = JButton("Copy JSON")
+        val copyXml = JButton("Copy XML")
+        val saveBtn = JButton("Save")
 
         copyJson.addActionListener {
             CopyPasteManager.getInstance().setContents(StringSelection(jsonArea.text))
@@ -133,7 +133,7 @@ class OutputDialog(
     private fun saveToFile()
     {
         val chooser = JFileChooser().apply {
-            dialogTitle = "JSON/XML Kaydet"
+            dialogTitle = "JSON/XML Save"
             isMultiSelectionEnabled = false
             fileFilter = FileNameExtensionFilter("JSON & XML", "json", "xml")
         }
