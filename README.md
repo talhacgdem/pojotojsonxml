@@ -1,8 +1,15 @@
-[![Install](https://img.shields.io/badge/Install-JetBrains%20Marketplace-0A7FFF?style=flat-square&logo=intellij-idea&logoColor=white)](https://plugins.jetbrains.com/plugin/29172-pojo-to-json-xml)
+<p align="center">
+  <a href="https://plugins.jetbrains.com/plugin/29172-pojo-to-json-xml" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Install-JetBrains%20Marketplace-0A7FFF?style=flat-square&logo=intellij-idea&logoColor=white" alt="Install from JetBrains Marketplace">
+  </a>
+</p>
+
 ---
 
 ## 🧭 Overview
+<!-- Plugin description -->
 POJO to JSON/XML is a lightweight IntelliJ plugin that generates clean, well-formatted JSON and XML examples from your Java classes. It respects common annotations (e.g., @JsonProperty), handles nested types and collections, and produces readable multi-line output—perfect for API samples, tests, and documentation.
+<!-- Plugin description end -->
 
 ---
 
